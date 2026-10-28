@@ -22,7 +22,8 @@ The objectives of the practical session in this chapter are as follows:
 ## 2: Experimental Results & Analysis
 
 ### 2.1 Experiment 1: Review of Loops 1
-
+This experiment revisits the FOR loop before learning nested loops. The program prints the
+character `*` `n` times horizontally (side by side). Use n as a positive integer input.
 
 #### 2.1.1 Java Program Code
 
