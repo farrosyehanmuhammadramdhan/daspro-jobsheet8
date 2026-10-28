@@ -155,38 +155,58 @@ The following shows the _output_ after the program is run:
     System.out.print("#");
     ```
 
-### 2.3 Experiment 3: 
-
+### 2.3 Experiment 3: Debugging a Star Triangle – Nested WHILE
+The starting code in this experiment is intentionally written so that it does not yet produce
+the correct triangle format. Your task is to identify the errors and fix them without changing
+the WHILE structure into FOR.
 
 #### 2.3.1 Java Program Code
 
+**Before Debug:**
 ```java
+import java.util.Scanner;
 
+public class Triangle11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of n = ");
+        int n = sc.nextInt();
 
+        int i = 0;
+        while (i <= n) {
+            int j = 0;
+            while (j < i) {
+                System.out.print("*");
+                j++;
+            }
+            i++;
+        }
+        sc.close();
+    }
+}
 ```
 
 #### 2.3.2 Screenshot Output
 
 The following shows the _output_ after the program is run:
 
-
+**Before Debug:**
+![Output Experiment 3.1](/result-3.1.png)
 
 
 #### 2.3.3 Answers to Questions
 
-- **Question 1:** 
+- **Question 1:** Identify the mismatches in the initial output, and at least two fixes needed to produce a nested triangle pattern.
   - **Answer:**
     - **Explanation:** 
   
-- **Question 2:** 
+- **Question 2:** Explain the roles of the variables `i` and `j`. Why must the value of `j` be reset to 0 in every
+iteration of the outer loop? What happens if `j` is not reset?
   - **Answer:** 
     
 
 
-- **Question 3:** 
-    
-
-- **Question 4:** 
+- **Question 3:** Explain the changes to the initialization, the condition, and the update of the outer loop that are needed to form the inverted triangle.
   - **Answer:** 
     
 
