@@ -238,7 +238,31 @@ public class Triangle11 {
         sc.close();
     }
 }
+```
 
+**Change the Initialization:**
+```java
+import java.util.Scanner;
+
+public class Triangle11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of n = ");
+        int n = sc.nextInt();
+
+        int i = 1;
+        while (i <= n) {
+            int j = 0;
+            while (j < i) {
+                System.out.print("*");
+                j++;
+            }
+            System.out.println();
+            i++;
+        }
+        sc.close();
+    }
+}
 ```
 
 #### 2.3.2 Screenshot Output
@@ -252,7 +276,10 @@ The following shows the _output_ after the program is run:
 ![Output Experiment 3.2](/result-3.2.png)
 
 **Add Println():**
-![Output Experiment 3.2](/result-3.3.a.png)
+![Output Experiment 3.3a](/result-3.3.a.png)
+
+**Change the Initialization:**
+![Output Experiment 3.3b](/result-3.3.b.png)
 
 
 
