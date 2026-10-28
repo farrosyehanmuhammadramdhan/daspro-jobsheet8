@@ -328,6 +328,119 @@ iteration of the outer loop? What happens if `j` is not reset?
     
 
 
+
+
+
+
+### 2.4 Experiment 4: Case Study of Group Project Scores
+In assessing a group project, each group receives scores from a number of graders. The program receives the number of groups and the number of graders (the same for every group), then calculates the average score of each group and determines the group with the highest average. This case is solved with nested loops without storing all the scores: a WHILE (outer) for the groups, a FOR (middle) for the graders, and a DO-WHILE (inner) to repeat invalid score input.
+
+#### 2.4.1 Java Program Code
+
+```java
+import java.util.Scanner;
+
+public class GroupScore11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        
+        System.out.print("Enter the number of groups: ");
+        int numGroups = sc.nextInt();
+        System.out.print("Enter the number of graders: ");
+        int numGraders = sc.nextInt();
+
+        
+        if (numGroups <= 0 || numGraders <= 0) {
+            System.out.println("Groups and graders must be > 0.");
+        } else {
+            
+            int groupNo = 1;
+            double highestAverage = -1;
+            int bestGroup = 0;
+
+            
+            while (groupNo <= numGroups) {
+                System.out.println("Group " + groupNo);
+                double totalScore = 0; 
+
+                for (int j = 1; j <= numGraders; j++) {
+                    int score;
+                    do {
+                        System.out.print("  Score from Grader " + j + ": ");
+                        score = sc.nextInt();
+                        if (score < 0 || score > 100) {
+                            System.out.println("  Score must be 0-100. Retry!");
+                        }
+                    } while (score < 0 || score > 100);
+
+                    totalScore += score;
+                }
+
+                double averageScore = totalScore / numGraders;
+                System.out.println("Group " + groupNo + ": average score = " + averageScore);
+
+                if (averageScore > highestAverage) {
+                    highestAverage = averageScore;
+                    bestGroup = groupNo;
+                }
+
+                groupNo++; 
+            }
+            
+            System.out.println("==============================");
+            System.out.println("Best group      : " + bestGroup);
+            System.out.println("Highest average : " + highestAverage);
+        }
+
+        sc.close();
+    }
+}
+
+```
+
+#### 2.4.2 Screenshot Output
+
+The following shows the _output_ after the program is run:
+
+![Output Experiment 4](/result-4.1.png)
+
+![Output Experiment 4](/result-4.2.png)
+
+![Output Experiment 4](/result-4.3.png)
+
+#### 2.4.3 Answers to Questions
+
+- **Question 1:** Why must `totalScore` be reset inside the outer loop, but `highestAverage` must not be reset for each group?
+  - **Answer:** 
+    - **Explanation:**
+      - `totalScore` : It must be reset within the outer loop so that the accumulated value only calculates the total for the group currently being processed.
+      
+      - `highestAverage` : It is not reset, so that it retains the highest average value found across all groups.
+
+
+- **Question 2:** For 3 groups and 2 graders (without any invalid input), how many times is the body of the `FOR` loop executed in total?
+  - **Answer:** The number of executions is 3 X 2 = 6 times.
+
+- **Question 3:** What happens if `totalScore` is declared as `int` and the average is calculated using integer division? Give an example of values.
+  - **Answer:**
+    - **Impact:** The average result will lose its decimal digits because integer division produces a whole number.
+    - **Example:** If `totalScore = 17` and `numGraders = 2`, the result of the division is 8 (it should be 8.5)
+    
+
+- **Question 4:** Why is `highestAverage` given the initial value -1 rather than 0? Give an example of input that produces a wrong result if the initial value were 0.
+  - **Answer:** 
+    - **Impact:** The average result of the first group is always recorded as the initial highest value, even if the average is 0.
+   - **Example wrong case if 0:** If the entire group has an average of 0 and the initial value of `highestAverage` is 0, the condition `averageScore > highestAverage` (0 > 0) evaluates to `false`, meaning the `bestGroup` variable will not be updated.
+
+- **Question 5:** This program has three levels of loops. Name each type of loop and its role.
+  - **Answer:**
+    - WHILE (Outer) : Controlling the iteration to process each group
+    - FOR (Middle) : Controlling the iteration of value readings from each Graders.
+    - DO-WHILE (Inner) : Validate that the entered value falls within the range 0–100, and request the input again if it is invalid.
+
+---
+
 ## 3: INDIVIDUAL ASSIGNMENT
 
 The following is a list of tasks to be completed in this worksheet:
