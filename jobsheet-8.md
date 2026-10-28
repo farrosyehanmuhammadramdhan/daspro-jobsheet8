@@ -163,6 +163,7 @@ The following is a list of tasks to be completed in this worksheet:
 
 - [x] **Task 1:** 
 - [x] **Task 2:** 
+- [x] **Task 3:**
 
 
 ### 3.1 Implementation of Task 1 Code
