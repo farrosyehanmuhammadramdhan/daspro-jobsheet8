@@ -186,12 +186,44 @@ public class Triangle11 {
 }
 ```
 
+**Debug Temporary:**
+```java
+import java.util.Scanner;
+
+public class Triangle11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of n = ");
+        int n = sc.nextInt();
+
+        int i = 0;
+        while (i <= n) {
+            System.out.print("[i=" + i + "] ");
+            int j = 0;
+            while (j < i) {
+                System.out.print("*");
+                j++;
+            }
+            i++;
+        }
+        sc.close();
+    }
+}
+```
+5. **Result:**
+   - a. The outer loop executes 6 times—specifically for values ​​of i = 0, 1, 2, 3, 4, and 5. This number does not match the desired number of rows (5 rows) because the loop begins at 0 and uses the condition i <= n, resulting in a total of n + 1 iterations.
+   - b. The number of `*` characters when `i = 0` is 0—meaning no `*` characters are printed—because the inner loop condition `j < i` (0 < 0) evaluates to false, causing the inner loop block to not execute at all.
+   - c. All printed output appears in a single continuous line because the program code uses only the `System.out.print()` command and lacks a `System.out.println()` instruction after the inner loop to trigger a line break.
+
 #### 2.3.2 Screenshot Output
 
 The following shows the _output_ after the program is run:
 
 **Before Debug:**
 ![Output Experiment 3.1](/result-3.1.png)
+
+**Debug Temporary:**
+![Output Experiment 3.2](/result-3.2.png)
 
 
 #### 2.3.3 Answers to Questions
