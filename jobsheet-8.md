@@ -84,8 +84,11 @@ The following shows the _output_ after the program is run:
 
 ---
 
-### 2.2 Experiment 2: 
-
+### 2.2 Experiment 2: Rectangle Star Pattern (Nested FOR)
+In this experiment a nested loop of FOR statements is used to print a rectangle of stars. The
+number of rows and columns is entered separately, so the role of each loop can be observed
+clearly: the outer loop controls the rows, while the inner loop controls the columns (recall the
+shelf/locker analogy from the lecture material).
 
 #### 2.2.1 Java Program Code
 
