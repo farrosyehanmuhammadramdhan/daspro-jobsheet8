@@ -93,37 +93,67 @@ shelf/locker analogy from the lecture material).
 #### 2.2.1 Java Program Code
 
 ```java
+import java.util.Scanner;
 
+public class Rectangle11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the numbers of rows: ");
+        int rows = sc.nextInt();
+        System.out.print("Enter the numbers of columns: ");
+        int columns = sc.nextInt();
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= columns; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
 ```
 
 #### 2.2.2 Screenshot Output
 
 The following shows the _output_ after the program is run:
 
+![Output Experiment 1](/result-2.png)
 
 ---
 
 #### 2.2.3 Answers to Questions
 
-- **Question 1:** 
+- **Question 1:** Explain the function of the variables i and j in the program.
   - **Answer:**
     - **Explanation:**
+      - Variable `i` : Acts as a counter in the outer loop to control the printing of rows.
+      - Variable `j` : Functions as a counter within the inner loop to control the printing of columns.
 
     
   
-- **Question 2:** 
+- **Question 2:** How many times are the outer loop, the inner loop, and the statement print("*") executed for rows = 4 and columns = 7?
   - **Answer:**
     - **Explanation:** 
+      - Outer Loop : Executed 4 times.
+      - Inner Loop : Executed 4 X 7 = 28 times.
+      - print("*") : Executed 28 times.
 
 
-- **Question 3:** 
+- **Question 3:** What happens if the bounds of the outer and inner loops are swapped (the outer loop uses columns and the inner loop uses rows)? Use rows = 3 and columns = 6 to explain.
   - **Answer:** 
+    - **Result:** A printed pattern with a size of 6 rows and 3 columns.
+    - **Explanation:** The outer loop will repeat 6 times (rows), and the inner loop will repeat 3 times per row (columns).
     
 
-- **Question 4:** 
+- **Question 4:** Explain the effect of removing `System out.println();` after the inner loop.
+  - **Answer:** All `*` characters will be printed aligned in a single row without moving to a new line, so a rectangular shape will not be formed.
+
+- **Question 5:** Modify the program so that the printed character is #.
   - **Answer:**
-
-
+    ```java
+    System.out.print("#");
+    ```
 
 ### 2.3 Experiment 3: 
 
