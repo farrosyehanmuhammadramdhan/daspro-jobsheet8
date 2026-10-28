@@ -215,6 +215,32 @@ public class Triangle11 {
    - b. The number of `*` characters when `i = 0` is 0—meaning no `*` characters are printed—because the inner loop condition `j < i` (0 < 0) evaluates to false, causing the inner loop block to not execute at all.
    - c. All printed output appears in a single continuous line because the program code uses only the `System.out.print()` command and lacks a `System.out.println()` instruction after the inner loop to trigger a line break.
 
+**Add println():**
+```java
+import java.util.Scanner;
+
+public class Triangle11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of n = ");
+        int n = sc.nextInt();
+
+        int i = 0;
+        while (i <= n) {
+            int j = 0;
+            while (j < i) {
+                System.out.print("*");
+                j++;
+            }
+            System.out.println();
+            i++;
+        }
+        sc.close();
+    }
+}
+
+```
+
 #### 2.3.2 Screenshot Output
 
 The following shows the _output_ after the program is run:
@@ -224,6 +250,10 @@ The following shows the _output_ after the program is run:
 
 **Debug Temporary:**
 ![Output Experiment 3.2](/result-3.2.png)
+
+**Add Println():**
+![Output Experiment 3.2](/result-3.3.a.png)
+
 
 
 #### 2.3.3 Answers to Questions
