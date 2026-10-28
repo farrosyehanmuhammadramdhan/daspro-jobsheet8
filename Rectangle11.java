@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Rectanagle11 {
+public class Rectangle11 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the numbers of rows: ");
