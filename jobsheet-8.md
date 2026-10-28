@@ -265,6 +265,31 @@ public class Triangle11 {
 }
 ```
 
+**Triangle Inverted:**
+```java
+import java.util.Scanner;
+
+public class Triangle11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of n = ");
+        int n = sc.nextInt();
+
+        int i = n;
+        while (i >= 1) {
+            int j = 0;
+            while (j < i) {
+                System.out.print("*");
+                j++;
+            }
+            System.out.println();
+            i--;
+        }
+        sc.close();
+    }
+}
+```
+
 #### 2.3.2 Screenshot Output
 
 The following shows the _output_ after the program is run:
@@ -280,6 +305,9 @@ The following shows the _output_ after the program is run:
 
 **Change the Initialization:**
 ![Output Experiment 3.3b](/result-3.3.b.png)
+
+**Triangle Inverted:**
+![Output Experiment 3.4](/result-3.4.png)
 
 
 
